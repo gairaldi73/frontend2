@@ -1,0 +1,9 @@
+.ng-touched{
+    color:red;
+}
+.ng-untouched{
+    color: green;
+}
+.error{
+    color: blue;
+}

@@ -1,0 +1,44 @@
+<p>login-plantilla works!</p>
+<form #authForm="ngForm" (ngSubmit)="onSubmit()">
+<p>
+    <mat-form-field>
+        <mat-label>Usuario</mat-label>
+        <input matInput type="text" [(ngModel)]="usuario" required name="usuario"/>
+      </mat-form-field>
+</p>
+<p>
+    <mat-form-field>
+        <mat-label>Clave</mat-label>
+        <input matInput type="text" [(ngModel)]="clave" required name="clave"/>
+      </mat-form-field>
+</p>
+<p>
+      <mat-form-field>
+        <mat-label>Reunión</mat-label>
+        <mat-select>
+          <mat-option value="1">Planificación</mat-option>
+          <mat-option value="2">Desarrollo</mat-option>
+          <mat-option value="3">Testing</mat-option>
+          <mat-option value="4">Implementación</mat-option>
+          <mat-option value="5">Mantenimiento</mat-option>
+        </mat-select>
+      </mat-form-field>
+</p>
+<p>
+      <mat-form-field>
+        <mat-label>Textarea</mat-label>
+        <textarea matInput></textarea>
+      </mat-form-field>
+</p>
+
+    <label>Usuario:<input type="text" [(ngModel)]="usuario" required name="usuario"/></label>
+    <p>{{usuario}}</p>
+    <label>Clave: <input type="text" [(ngModel)]="clave" name="clave" required/></label>
+    <p>{{clave}}</p>
+    <p><input type="submit" [disabled]="authForm.invalid" value ="Ingresar" /></p>
+</form>
+<p>Contenido caja: {{obtenerValor()}}</p>
+<p><button mat-raised-button color="accent" (click)="cambiar">Reset</button></p>
+<p><button mat-raised-button color="warn" (click)="cambiar">Reset1</button></p>
+<p><button mat-raised-button color="primary" (click)="cambiar">Reset2</button></p>
+{{authForm.value | json}}

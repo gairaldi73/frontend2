@@ -1,0 +1,11 @@
+<div>
+  <p>Reuniones Agendadas</p>
+  <nav>
+    <ul>
+      <li *ngFor="let reunion of reuniones">
+        <a [routerLink]="['detalle', reunion.id]">{{ reunion.nombre }}</a>
+      </li>
+    </ul>
+  </nav>
+  <router-outlet></router-outlet>
+</div>

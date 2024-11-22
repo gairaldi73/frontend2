@@ -1,0 +1,22 @@
+<p>Formulario de registro</p>
+
+<form [formGroup] = "registroForm" (ngSubmit)="formSubmit()">
+<p>Nombre: <input type="text" formControlName="nombre" /></p>
+<p>Apellido: <input type="text" formControlName="apellido" /></p>
+
+<div formGroupName="direccion">
+    <h3>Dirección</h3>
+    <mat-form-field>
+    <mat-label>Calle:</mat-label><input matInput type="text" formControlName="calle" />
+    </mat-form-field>
+    <mat-form-field>
+    <mat-label>Altura:</mat-label><input matInput type="text" formControlName="altura" />
+    </mat-form-field>
+</div>
+<!--   -->
+<p><input [disabled]="!registroForm.valid" type="submit" value="Enviar" /> </p>
+
+</form>
+<p>Contenido caja: {{obtenerValor()}}</p>
+<p><button (click)="cambiar()">Reset</button></p>
+{{registroForm.value | json}}
