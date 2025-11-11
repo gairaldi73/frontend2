@@ -1,0 +1,11 @@
+<div>
+  <p>{{ reunion.id }}</p>
+  <p>{{ reunion.nombre }}</p>
+  <p>{{'DÍA: '}}{{reunion.fecha|date: 'medium'}}</p>
+  <p>{{'DURACIÓN: '}}{{reunion.duracion}} {{'horas'}}</p>
+  <p>{{'PARTICPAN: '}}</p>
+  <ol>
+    <li *ngFor="let nombre of reunion.participantes">{{  nombre}}</li>
+  </ol>
+  <p>{{'INFORMACIÓN: '}}{{reunion.detalle}}</p>
+</div>
