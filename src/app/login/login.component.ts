@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoginService } from '../login.service';
 import { User } from '../user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,12 +11,12 @@ import { User } from '../user';
 })
 export class LoginComponent {
   user: User;
-  constructor(private service: LoginService) {
+  constructor(private service: LoginService, private router: Router) {
     this.user = new User('', '');
   }
   login() {
     this.service.login(this.user.username, this.user.password).subscribe(() => {
-      console.log('Ingrese');
+      this.router.navigate(['/listado']);
     });
   }
 }
